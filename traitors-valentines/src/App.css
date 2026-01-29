@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #111; /* Dark background behind the phone */
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 480px; /* Mobile shape */
+  min-height: 100vh;
+  background: linear-gradient(180deg, #051915 0%, #000000 100%); /* Deep Traitors Green to Black */
+  color: #f0f0f0;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif; /* The Traitors style font */
+  color: #d4af37; /* Gold */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Screen 1: The Brooch */
+.screen-locked {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+.warning-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #ff4d4d; /* Red warning */
+  animation: pulse 2s infinite;
+}
+
+.brooch-container {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.brooch-container:hover {
+  transform: scale(1.05);
+}
+
+.brooch-img {
+  width: 250px;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3)); /* Gold glow */
+}
+
+/* Screen 2: The Reveal */
+.screen-content {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.screen-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.murder-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 1px solid #d4af37;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.valentine-question {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack on mobile usually, but we want side by side initially */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.btn {
+  font-family: 'Cinzel', serif;
+  border: 2px solid #d4af37;
+  background: transparent;
+  color: #d4af37;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.btn-yes {
+  background-color: #d4af37;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-no {
+  background-color: #1a1a1a;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px #d4af37;
+}
+
+/* Success State */
+.success-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  flex-direction: column;
+}
+
+.yay-text {
+  font-size: 4rem;
+  color: #d4af37;
+  animation: bounce 1s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
