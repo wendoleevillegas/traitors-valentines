@@ -90,7 +90,7 @@ function App() {
             <div className="murder-text">
               <p><strong>OH NO!</strong></p>
               <p>You have been murdered by the poisonous brooch.</p>
-              <p>You have been murdered by <strong>Traitor [Your Name]!</strong></p> 
+              <p>You have been murdered by <strong>Traitor Wendolee!</strong></p> 
               <p>If you wish to continue being a faithful, you have to answer one question...</p>
             </div>
 
